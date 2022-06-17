@@ -1,0 +1,54 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:security/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "security"],
+  "rules": {
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "no-unused-vars": "error",
+    "no-shadow": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".tsx"]
+      }
+    ],
+    "react/no-danger": "off", // it's self explainatory that no-danger should be used sparingly
+    "react/react-in-jsx-scope": "off", // next.js does not require react in most components
+    "react/prop-types": 0, // as long as TS strict mode is off this is not required
+    "no-console": "error", // no console statements allowed
+    "prettier/prettier": "off" // don't show prettier errors as it will be fixed when saved anyway
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  }
+}
